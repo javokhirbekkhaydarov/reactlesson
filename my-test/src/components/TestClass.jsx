@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-export default function TestClass() {
-  return (
-    <div>TestClass</div>
-  )
+export default class TestClass extends Component {
+  render() {
+    return (
+      <div className='highline'>TestClass</div>
+    )
+  }
 }
-
