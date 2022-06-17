@@ -15,6 +15,10 @@ git branch -M main
 git remote add origin git@github.com:javohirbekkhaydarov/reactLesson.git
 git push -u origin main */
 
-/* git remote add origin git@github.com:javohirbekkhaydarov/reactLesson.git
+/*
+
+git remote add origin git@github.com:javohirbekkhaydarov/reactLesson.git
 git branch -M main
-git push -u origin main */
+git push -u origin main
+
+*/
