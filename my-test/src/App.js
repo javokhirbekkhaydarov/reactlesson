@@ -1,61 +1,69 @@
-import Test2 from "./components/Test2";
+import "./App.css";
+import Book from "./components/Book";
 function App() {
-  const expenses = [
+  const firstBook = [
     {
-      title: "Dasturlash kurslari",
-      amount: 35,
-      date: new Date(2022, 4, 27),
+      img: "https://loremflickr.com/320/241",
+      title: "Atomic Habits",
+      author: "James Clear",
     },
     {
-      title: "Komunal harajatlar",
-      amount: 5,
-      date: new Date(2022, 4, 27),
+      img: "https://loremflickr.com/320/242",
+      title: "Atomic Habits",
+      author: "James Clear",
     },
     {
-      title: "Yo'l kira",
-      amount: 8,
-      date: new Date(2022, 4, 27),
+      img: "https://loremflickr.com/320/243",
+      title: "Atomic Habits",
+      author: "James Clear",
     },
     {
-      title: "Ijara",
-      amount: 70,
-      date: new Date(2022, 4, 27),
+      img: "https://loremflickr.com/320/244",
+      title: "Atomic Habits",
+      author: "James Clear",
     },
     {
-      title: "Kiyim kechak",
-      amount: 100,
-      date: new Date(2022, 4, 27),
+      img: "https://loremflickr.com/320/245",
+      title: "Atomic Habits",
+      author: "James Clear",
+    },
+    {
+      img: "https://loremflickr.com/320/246",
+      title: "Atomic Habits",
+      author: "James Clear",
+    },
+    {
+      img: "https://loremflickr.com/320/247",
+      title: "Atomic Habits",
+      author: "James Clear",
+    },
+    {
+      img: "https://loremflickr.com/320/248",
+      title: "Atomic Habits",
+      author: "James Clear",
+    },
+    {
+      img: "https://loremflickr.com/320/249",
+      title: "Atomic Habits",
+      author: "James Clear",
     },
   ];
-
   return (
     <div className="container">
-      <h1 className="headline">Hello World</h1>
-      <Test2
-        title={expenses[0].title}
-        amount={expenses[0].amount}
-        date={expenses[0].date}
-      />
-      <Test2
-        title={expenses[1].title}
-        amount={expenses[1].amount}
-        date={expenses[1].date}
-      />
-      <Test2
-        title={expenses[2].title}
-        amount={expenses[2].amount}
-        date={expenses[2].date}
-      />
-      <Test2
-        title={expenses[3].title}
-        amount={expenses[3].amount}
-        date={expenses[3].date}
-      />
-      <Test2
-        title={expenses[4].title}
-        amount={expenses[4].amount}
-        date={expenses[4].date}
-      />
+      <h1 className="headline">Welcome to our shopping mall</h1>
+
+      <div className="book_wrapper">
+        {firstBook.map((books, index) => {
+          return (
+            <Book
+              img={books.img}
+              title={books.title}
+              author={books.author}
+              key={index}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 }

@@ -1,5 +1,9 @@
 .container {
-  max-width: 1120px;
+  max-width: 100%;;
   padding: 15px;
   margin: 15px;
+}
+
+.headline {
+  text-align: center;
 }
