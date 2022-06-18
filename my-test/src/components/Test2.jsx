@@ -9,4 +9,6 @@ function test2(props) {
     </div>
   );
 }
+
 export default test2;
+
