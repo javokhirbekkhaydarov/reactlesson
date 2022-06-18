@@ -1,16 +1,15 @@
 import React from "react";
-import "./Book.css"
-const Book = () => {
+import "./Book.css";
+const Book = (props) => {
   return (
     <div className="book">
-      <img className="book_img" src="https://loremflickr.com/320/24" alt="deep work" />
-
-      <div className="book_description">
-        <h2 > Deep Work</h2>
-        <p>Cal Newport</p>
+      <img className="book_img" src={props.img} alt="deep work" />
+      <div className="book_desc">
+        <h2>{props.title}</h2>
+        <p>{props.author}</p>
       </div>
     </div>
   );
 };
 
-export default Book
+export default Book;
