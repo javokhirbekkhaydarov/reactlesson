@@ -1,15 +1,4 @@
 import "./App.css";
-import TestClass from "./components/TestClass";
-function App() {
-  return (
-    <div className="App">
-      <TestClass />
-    </div>
-  );
-}
-
-export default App;
-import "./App.css";
 import Test2 from "./components/Test2";
 function App() {
   const expenses = [
