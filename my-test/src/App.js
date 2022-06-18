@@ -1,4 +1,3 @@
-import "./App.css";
 import Test2 from "./components/Test2";
 function App() {
   const expenses = [
