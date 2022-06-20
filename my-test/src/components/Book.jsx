@@ -7,6 +7,7 @@ const Book = (props) => {
       <div className="book_desc">
         <h2>{props.title}</h2>
         <p>{props.author}</p>
+        <button onClick={() => console.log(`clicked`)}> Change title</button>
       </div>
     </div>
   );
