@@ -1,6 +1,11 @@
 import React from "react";
 import "./Book.css";
 const Book = (props) => {
+
+  const clickHunter = (props) => {
+    console.log("clicked");
+  }
+
   return (
     <div className="book">
       <img className="book_img" src={props.img} alt="deep work" />
