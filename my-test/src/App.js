@@ -50,7 +50,7 @@ function App() {
   ];
   return (
     <div className="container">
-      <h1 className="headline">Welcome to our shopping mall</h1>
+      <h1 className="headline">Welcome to our shopping mall)</h1>
 
       <div className="book_wrapper">
         {firstBook.map((books, index) => {
