@@ -3,7 +3,6 @@ import { useState } from "react";
 import "./Book.css";
 const Book = (props) => {
   const [title, setTitle] = useState(props.title);
-  let title = props.title;
   const clickHunter = (props) => {
     console.log("clicked");
   };
@@ -14,7 +13,23 @@ const Book = (props) => {
       <div className="book_desc">
         <h2>{title}</h2>
         <p>{props.author}</p>
-        <button onClick={() => console.log(`clicked`)}> Change title</button>
+        <button
+          onClick={() => {
+            setTitle("focusing");
+          }}
+        >
+          {" "}
+          Change title
+        </button>
+        <br />
+        <button
+          onClick={() => {
+            setTitle(props.title);
+          }}
+        >
+         
+          reverse title
+        </button>
       </div>
     </div>
   );
