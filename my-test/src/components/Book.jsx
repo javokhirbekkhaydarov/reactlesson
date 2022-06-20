@@ -1,11 +1,25 @@
 import React from "react";
 import { useState } from "react";
+
 import "./Book.css";
 const Book = (props) => {
   const [title, setTitle] = useState(props.title);
   const clickHunter = (props) => {
     console.log("clicked");
   };
+  const titleCHangeHandler = () => {
+    setTitle("focusing");
+
+  }
+
+  const titleResetHandler = () => {
+    setTitle(props.title);
+
+  }
+
+
+
+
 
   return (
     <div className="book">
@@ -14,18 +28,14 @@ const Book = (props) => {
         <h2>{title}</h2>
         <p>{props.author}</p>
         <button
-          onClick={() => {
-            setTitle("focusing");
-          }}
+          onClick={titleCHangeHandler}
         >
           {" "}
           Change title
         </button>
         <br />
         <button
-          onClick={() => {
-            setTitle(props.title);
-          }}
+          onClick={titleResetHandler}
         >
          
           reverse title
