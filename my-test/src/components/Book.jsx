@@ -1,4 +1,5 @@
 import React from "react";
+import Counter from "./Counter";
 import { useState } from "react";
 
 import "./Book.css";
@@ -9,17 +10,11 @@ const Book = (props) => {
   };
   const titleCHangeHandler = () => {
     setTitle("focusing");
-
-  }
+  };
 
   const titleResetHandler = () => {
     setTitle(props.title);
-
-  }
-
-
-
-
+  };
 
   return (
     <div className="book">
@@ -27,19 +22,10 @@ const Book = (props) => {
       <div className="book_desc">
         <h2>{title}</h2>
         <p>{props.author}</p>
-        <button
-          onClick={titleCHangeHandler}
-        >
-          {" "}
-          Change title
-        </button>
+        <button onClick={titleCHangeHandler}> Change title</button>
         <br />
-        <button
-          onClick={titleResetHandler}
-        >
-         
-          reverse title
-        </button>
+        <button onClick={titleResetHandler}>reverse title</button>
+        <Counter />
       </div>
     </div>
   );
