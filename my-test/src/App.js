@@ -1,6 +1,7 @@
 import "./App.css";
 import Book from "./components/Book";
 import ChildrenProp from "./components/ChildrenProp";
+import AddNewBook from "./components/AddNewBook";
 function App() {
   const firstBook = [
     {
@@ -51,6 +52,7 @@ function App() {
   ];
   return (
     <div className="container">
+      <AddNewBook />
       <h1 className="headline">Welcome to our shopping mall</h1>
 
       <div className="book_wrapper">
