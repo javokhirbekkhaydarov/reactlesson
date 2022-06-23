@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./Book.css";
+import "../book/Book.css";
 
 const ChildrenProp = (props) => {
   return <div className="border_box">{props.children}</div>;

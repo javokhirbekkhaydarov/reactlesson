@@ -1,7 +1,8 @@
 import "./App.css";
-import Book from "./components/Book";
-import ChildrenProp from "./components/ChildrenProp";
-import AddNewBook from "./components/AddNewBook";
+import Book from "./components/book/Book";
+import ChildrenProp from "./components/test/ChildrenProp";
+import AddNewBook from "./components/newbook/AddNewBook";
+import UseStateAdvanced from "./components/useStateAdvanced/UseStateAdvanced";
 function App() {
   const firstBook = [
     {
@@ -52,24 +53,8 @@ function App() {
   ];
   return (
     <div className="container">
-      <AddNewBook />
-      <h1 className="headline">Welcome to our shopping mall</h1>
-
-      <div className="book_wrapper">
-        {firstBook.map((books, index) => {
-          return (
-            <Book
-              img={books.img}
-              title={books.title}
-              author={books.author}
-              key={index}
-            />
-          );
-        })}
-      </div>
-      <br />
-      <ChildrenProp>About US</ChildrenProp>
-      <ChildrenProp children={`udar`} />
+   
+    <UseStateAdvanced />
     </div>
   );
 }

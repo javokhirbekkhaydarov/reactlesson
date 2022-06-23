@@ -5,7 +5,7 @@ const AddNewBook = () => {
   const [enteredAuthor, setEnteredAuthor] = useState("");
 
   const titleCHangeHandler = (event) => {
-    console.log(event.target.value);
+    setEnteredTitle(event.target.value);
   };
 
   const authorChangeHandler = (event) => {
@@ -29,7 +29,7 @@ const AddNewBook = () => {
           </div>
           <div className="new-book_control">
             <label htmlFor="title">Author</label>
-            <input type="text" onChange={titleCHangeHandler} />
+            <input type="text" onChange={authorChangeHandler} />
           </div>
         </div>
         <div className="new-book_actions">
