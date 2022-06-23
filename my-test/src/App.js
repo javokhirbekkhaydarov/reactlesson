@@ -53,8 +53,7 @@ function App() {
   ];
   return (
     <div className="container">
-   
-    <UseStateAdvanced />
+      <UseStateAdvanced />
     </div>
   );
 }
