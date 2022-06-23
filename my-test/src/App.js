@@ -1,7 +1,7 @@
 import "./App.css";
-import Book from "./components/book/Book";
-import ChildrenProp from "./components/test/ChildrenProp";
-import AddNewBook from "./components/newbook/AddNewBook";
+// import Book from "./components/book/Book";
+// import ChildrenProp from "./components/test/ChildrenProp";
+// import AddNewBook from "./components/newbook/AddNewBook";
 import UseStateAdvanced from "./components/useStateAdvanced/UseStateAdvanced";
 function App() {
   const firstBook = [
