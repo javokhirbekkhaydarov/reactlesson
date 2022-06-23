@@ -3,6 +3,7 @@ import "./App.css";
 // import ChildrenProp from "./components/test/ChildrenProp";
 // import AddNewBook from "./components/newbook/AddNewBook";
 import UseStateAdvanced from "./components/useStateAdvanced/UseStateAdvanced";
+import UseStateObject from "./components/useStateAdvanced/UseStateObject";
 function App() {
   const firstBook = [
     {
@@ -53,7 +54,8 @@ function App() {
   ];
   return (
     <div className="container">
-      <UseStateAdvanced />
+      <UseStateAdvanced /> 
+      <UseStateObject />
     </div>
   );
 }

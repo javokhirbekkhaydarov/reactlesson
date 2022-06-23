@@ -21,7 +21,7 @@ const UseStateAdvanced = () => {
             <h4>{name}</h4>
             <button onClick={() => removeItem(id)}>Remove</button>
           </div>
-        );
+        ) ;
       })}
       <button className="btn" onClick={() => setPeople([])}>
         {" "}
