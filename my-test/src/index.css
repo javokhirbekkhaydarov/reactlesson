@@ -8,8 +8,7 @@ body {
 }
 
 code {
-  font-family:  Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: Monaco, Consolas, "Courier New", monospace;
 } /*
 =============== 
 Variables
@@ -80,12 +79,23 @@ Global Styles
   box-sizing: border-box;
 }
 body {
-  font-family:  "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif;
   background: var(--clr-grey-10);
-  color: var(--clr-grey-1);
+  color: #fff;
   line-height: 1.5;
   font-size: 0.875rem;
+  background: #fc466b; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to left,
+    #3f5efb,
+    #fc466b
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to left,
+    #3f5efb,
+    #fc466b
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 ul {
   list-style-type: none;
