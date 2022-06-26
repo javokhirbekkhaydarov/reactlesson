@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 
 const UseEffectFetchData = () => {
@@ -32,6 +33,7 @@ const UseEffectFetchData = () => {
       </ul>
     </>
   );
+
 };
 
 export default UseEffectFetchData;
