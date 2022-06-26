@@ -24,7 +24,7 @@ const UseEffectCleanUp = () => {
   return (
     <>
       <div className="center">
-        <h1> Your Window Size</h1>
+        <h1> Your Display Size</h1>
         <h2>
           <i>{size}px</i> X <i>{height}px</i>
         </h2>
