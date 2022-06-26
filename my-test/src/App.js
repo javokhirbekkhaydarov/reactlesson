@@ -1,12 +1,11 @@
 import "./App.css";
-import UseEffectCleanUp from "./components/useEffectAdvanced/UseEffectCleanUp";
-import UseEffextBasics from "./components/useEffectAdvanced/UseEffextBasics";
+import UseEffectFetchData from "./components/useEffect/UseEffectFetchData";
+
 function App() {
  
   return (
     <div className="container">
-     <UseEffextBasics />
-     <UseEffectCleanUp />
+     <UseEffectFetchData />
     </div>
   );
 }
