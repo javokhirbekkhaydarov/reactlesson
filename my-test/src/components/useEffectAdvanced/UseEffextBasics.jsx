@@ -14,8 +14,8 @@ const UseEffextBasics = () => {
   console.log("render component");
   return (
     <>
-      {/* <h1>{value}</h1>
-      <button onClick={() => setValue(value + 1)}>Click Me</button> */}
+      <h1>{value}</h1>
+      <button onClick={() => setValue(value + 1)}>Click Me</button>
     </>
   );
 };
