@@ -7,20 +7,21 @@ const MultipleRanding = () => {
   const [user, setUser] = useState("default user");
 
   useEffect(() => {
-    fetch(url).then((resp) => {
-      if (resp.status >= 200 && resp.status <= 299) {
-        return resp.json();
-      } else {
+    fetch(url)
+      .then((resp) => {
+        if (resp.status >= 200 && resp.status <= 299) {
+          return resp.json();
+        } else {
+          setIsLoading(false);
+          setError(true);
+          throw new Error(resp.statusText);
+        }
+      })
+      .then((user) => {
+        const { login } = user;
+        setUser(login);
         setIsLoading(false);
-        setError(true);
-        throw new Error(resp.statusText);
-      }
-    });
-    then((user) => {
-      const { login } = user;
-      setUser(login);
-      setIsLoading(false);
-    });
+      });
   });
   if (isLoading) {
     return <h1>Loading..,</h1>;
