@@ -11,14 +11,22 @@ const MultipleRanding = () => {
       if (resp.status >= 200 && resp.status <= 299) {
         return resp.json();
       } else {
+        setIsLoading(false);
+        setError(true);
+        throw new Error(resp.statusText);
       }
+    });
+    then((user) => {
+      const { login } = user;
+      setUser(login);
+      setIsLoading(false);
     });
   });
   if (isLoading) {
     return <h1>Loading..,</h1>;
   }
-  if(isError){
-    return <h1>Errorr.......</h1>
+  if (isError) {
+    return <h1>Errorr.......</h1>;
   }
 
   return (
