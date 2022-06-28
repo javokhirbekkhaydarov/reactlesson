@@ -1,16 +1,33 @@
-import React , {useState , useEffect} from 'react'
+import React, { useState, useEffect } from "react";
 
-
-const url = "https://api.github.com/users/QuincyLarson"
+const url = "https://api.github.com/users/QuincyLarson";
 const MultipleRanding = () => {
-  const [isLoading , setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(true);
+  const [isError, setError] = useState(false);
+  const [user, setUser] = useState("default user");
+
+  useEffect(() => {
+    fetch(url).then((resp) => {
+      if (resp.status >= 200 && resp.status <= 299) {
+        return resp.json();
+      } else {
+      }
+    });
+  });
+  if (isLoading) {
+    return <h1>Loading..,</h1>;
+  }
+  if(isError){
+    return <h1>Errorr.......</h1>
+  }
+
   return (
     <>
-    <div className="container">
+      <div className="container">
         <h2>hi everyone</h2>
-    </div>
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default MultipleRanding
+export default MultipleRanding;
