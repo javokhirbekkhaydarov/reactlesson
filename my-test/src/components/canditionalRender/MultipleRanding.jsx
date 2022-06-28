@@ -21,7 +21,8 @@ const MultipleRanding = () => {
         const { login } = user;
         setUser(login);
         setIsLoading(false);
-      });
+      })
+      .catch((error) => console.log(error));
   });
   if (isLoading) {
     return <h1>Loading..,</h1>;
@@ -33,7 +34,7 @@ const MultipleRanding = () => {
   return (
     <>
       <div className="container">
-        <h2>hi everyone</h2>
+        <h2>{user}</h2>
       </div>
     </>
   );
