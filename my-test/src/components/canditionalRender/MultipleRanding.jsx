@@ -6,7 +6,7 @@ const MultipleRanding = () => {
   return (
     <>
     <div className="container">
-        <h1>hi everyone</h1>
+        <h2>hi everyone</h2>
     </div>
     </>
   )
