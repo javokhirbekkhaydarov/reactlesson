@@ -82,7 +82,7 @@ body {
   font-family: "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
     "Helvetica Neue", sans-serif;
   background: var(--clr-grey-10);
-  color: #fff;
+
   line-height: 1.5;
   font-size: 0.875rem;
   background: #fc466b; /* fallback for old browsers */
