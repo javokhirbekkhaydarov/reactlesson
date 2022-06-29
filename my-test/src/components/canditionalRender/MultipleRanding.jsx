@@ -28,7 +28,7 @@ const MultipleRanding = () => {
     return <h1>Loading..,</h1>;
   }
   if (isError) {
-    return <h1>Errorr.......</h1>;
+    return <h1>Errorr.......)</h1>;
   }
 
   return (
