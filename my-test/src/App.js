@@ -1,11 +1,11 @@
 import "./App.css";
-import MultipleRanding from "./components/canditionalRender/MultipleRanding";
+import ShortCircuit from "./components/ShortCirciut/ShortCircuit";
 
 function App() {
  
   return (
     <div className="container">
-     <MultipleRanding />
+     <ShortCircuit />
     </div>
   );
 }
