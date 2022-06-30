@@ -6,10 +6,12 @@ const UseRef = () => {
   console.log(inputValue);
 
   const refContainer = useRef(null);
+  const divContainer = useRef(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(refContainer.current.value);
+    console.log(divContainer.current.value);
   };
 
   useEffect(() => {
@@ -29,6 +31,7 @@ const UseRef = () => {
           </button>
         </div>
       </form>
+      <div ref={divContainer} > Hello World</div>
       <input
         type="text"
         value={inputValue}
