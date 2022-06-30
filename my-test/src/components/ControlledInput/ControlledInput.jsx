@@ -23,7 +23,7 @@ const ControlledInput = () => {
     <>
       <form className="form" onSubmit={handleSubmit}>
         <div className="form-control">
-          <label htmlFor="firstName">Name</label>
+          <label htmlFor="firstName">your Name</label>
           <input
             type="text"
             name="firstName"
