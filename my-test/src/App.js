@@ -1,11 +1,11 @@
 import "./App.css";
-import ControlledInput from "./components/ControlledInput/ControlledInput";
+
+import UseRef from "./components/UseRefBasics/UseRef";
 
 function App() {
- 
   return (
     <div className="container">
-     <ControlledInput />
+      <UseRef />
     </div>
   );
 }
