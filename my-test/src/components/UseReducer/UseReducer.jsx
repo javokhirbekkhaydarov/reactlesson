@@ -19,7 +19,10 @@ const reducer = (state, action) => {
       modalContent: "Please , Enter Value",
     };
   }
-  throw new Error ("now matching action type")
+  if (action.type === "CLOSE_MODAL") {
+    return { ...state, isModalOpen: false };
+  }
+  throw new Error("now matching action type");
 };
 
 const defaultState = {
@@ -37,14 +40,21 @@ const UseReducer = () => {
     if (name) {
       const newItem = { id: new Date().getTime.toString(), name };
       dispatch({ type: "ADD_ITEM", payload: newItem });
-      setName("")
+      setName("");
     } else {
       dispatch({ type: "NO_VALUE" });
     }
   };
+
+  const closeModal = () => {
+    dispatch({ type: "CLOSE_MODAL" });
+  };
+
   return (
     <>
-      {state.isModalOpen && <Modal modalContent={state.modalContent} />}
+      {state.isModalOpen && (
+        <Modal closeModal={closeModal} modalContent={state.modalContent} />
+      )}
       <form className="form" onSubmit={handleSubmit}>
         <div>
           <input
