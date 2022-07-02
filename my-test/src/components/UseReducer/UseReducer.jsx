@@ -19,6 +19,7 @@ const reducer = (state, action) => {
       modalContent: "Please , Enter Value",
     };
   }
+  throw new Error ("now matching action type")
 };
 
 const defaultState = {
