@@ -1,11 +1,10 @@
 import "./App.css";
-import PropsDrilling from "./components/PropsDrilling/PropsDrilling";
+import ContextApi from "./components/ContextAPi/ContextApi";
 
 function App() {
   return (
     <div className="container">
-      
-      <PropsDrilling />
+      <ContextApi />
     </div>
   );
 }

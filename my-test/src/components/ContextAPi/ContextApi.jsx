@@ -1,8 +1,10 @@
-import React, { useState } from "react";
-
+import React, { useState, useContext } from "react";
 import { data } from "../../Data";
 
-const PropsDrilling = () => {
+const PersonContext = React.createContext();
+//!note have a two component 1) provider 2) consumer
+
+const ContextApi = () => {
   const [people, setPeople] = useState(data);
 
   const removePerson = (id) => {
@@ -11,10 +13,10 @@ const PropsDrilling = () => {
     });
   };
   return (
-    <section>
+    <PersonContext.Provider>
       <h3>Props Dtilling</h3>
       <List people={people} removePerson={removePerson} />
-    </section>
+    </PersonContext.Provider>
   );
 };
 const List = ({ people, removePerson }) => {
@@ -42,4 +44,4 @@ const SinglePerson = ({ id, name, removePerson }) => {
   );
 };
 
-export default PropsDrilling;
+export default ContextApi;
