@@ -1,10 +1,10 @@
 import React, { useState, useReducer } from "react";
+
 import Modal from "./Modal";
 
 const reducer = (state, action) => {
   if (action.type === "ADD_ITEM") {
     const newPeople = [...state.people, action.payload];
-
     return {
       ...state,
       people: newPeople,
@@ -16,10 +16,10 @@ const reducer = (state, action) => {
     return {
       ...state,
       isModalOpen: true,
-      modalContent: "Please , Enter Value",
+      modalContent: "biror nima kiriteee eplos bachcha",
     };
   }
-  throw new Error ("now matching action type")
+  throw new Error("now matching action type")
 };
 
 const defaultState = {
@@ -35,7 +35,7 @@ const UseReducer = () => {
     e.preventDefault();
 
     if (name) {
-      const newItem = { id: new Date().getTime.toString(), name };
+      const newItem = { id: new Date().getTime().toString(), name };
       dispatch({ type: "ADD_ITEM", payload: newItem });
     } else {
       dispatch({ type: "NO_VALUE" });
@@ -52,13 +52,14 @@ const UseReducer = () => {
             onChange={(e) => setName(e.target.value)}
           />
         </div>
-        <button type="submit">Add</button>
+
+        <button type="submit">add task</button>
       </form>
 
       {state.people.map((person) => {
         return (
           <div key={person.id}>
-            <h4>{person.name}</h4>
+            <h4 className="item">{person.name}</h4>
           </div>
         );
       })}
