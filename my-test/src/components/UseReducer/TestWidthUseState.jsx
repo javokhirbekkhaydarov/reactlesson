@@ -1,4 +1,4 @@
-import React , {useState} from "react";
+import React, { useState } from "react";
 import { data } from "../useStateAdvanced/Data";
 
 const TestWidthUseState = () => {

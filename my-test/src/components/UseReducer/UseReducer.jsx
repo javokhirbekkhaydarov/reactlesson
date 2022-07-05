@@ -1,10 +1,10 @@
 import React, { useState, useReducer } from "react";
+
 import Modal from "./Modal";
 
 const reducer = (state, action) => {
   if (action.type === "ADD_ITEM") {
     const newPeople = [...state.people, action.payload];
-
     return {
       ...state,
       people: newPeople,
@@ -16,22 +16,11 @@ const reducer = (state, action) => {
     return {
       ...state,
       isModalOpen: true,
-      modalContent: "Please , Enter Value",
+      modalContent: "biror nima kiriteee eplos bachcha",
     };
   }
-  if (action.type === "CLOSE_MODAL") {
-    return { ...state, isModalOpen: false };
-  }
-  if (action.type === "REMOVE_ITEM") {
-    const newPeople = state.people.filter(
-      (person) => person.id !== action.payload
-    );
-    return {
-      ...state,
-      people: newPeople,
-    };
-  }
-  throw new Error("now matching action type");
+  throw new Error("now matching action type")
+
 };
 
 const defaultState = {
@@ -73,11 +62,14 @@ const UseReducer = () => {
             onChange={(e) => setName(e.target.value)}
           />
         </div>
-        <button type="submit">Add</button>
+
+        <button type="submit">add task</button>
       </form>
 
       {state.people.map((person) => {
         return (
+
+ 
           <div key={person.id} className="item">
             <h4>{person.name}</h4>
             <button
@@ -88,6 +80,7 @@ const UseReducer = () => {
             >
               remove
             </button>
+
           </div>
         );
       })}
