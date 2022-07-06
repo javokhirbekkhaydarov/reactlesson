@@ -1,12 +1,16 @@
 import "./App.css";
-import ContextApi from "./components/ContextAPi/ContextApi";
+
+import Index from "./components/PropsType/Index";
+
 
 function App() {
   return (
     <div className="container">
-      <ContextApi />
+
+      <Index />
+
     </div>
   );
 }
-  
+
 export default App;
