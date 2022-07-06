@@ -1,15 +1,12 @@
 import "./App.css";
-
-import UseReducer from "./components/UseReducer/UseReducer";
+import Index from "./components/PropsType/Index";
 
 function App() {
-  
   return (
     <div className="container">
-      <UseReducer />
-   
+      <Index />
     </div>
   );
 }
-  
+
 export default App;
