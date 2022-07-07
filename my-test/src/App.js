@@ -5,11 +5,12 @@ import Index from "./components/PropsType/Index";
 
 function App() {
   return (
-    <div className="container">
+    <div className="container"> 
 
       <Index />
 
     </div>
+
   );
 }
 
