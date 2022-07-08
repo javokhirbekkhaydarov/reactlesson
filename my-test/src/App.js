@@ -1,10 +1,10 @@
 import "./App.css";
-import Index from "./components/PropsType/Index";
+import MainRouter from "./components/Router/MainRouter";
 
 function App() {
   return (
     <div className="container">
-      <Index />
+    <MainRouter />
     </div>
   );
 }
