@@ -1,5 +1,6 @@
 import "./App.css";
 
+
 import UseReducer from "./components/UseReducer/UseReducer";
 
 function App() {
@@ -8,6 +9,6 @@ function App() {
       <UseReducer />
     </div>
   );
-}
+
 
 export default App;
