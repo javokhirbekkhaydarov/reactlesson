@@ -1,9 +1,14 @@
 import "./App.css";
 
-import MainRouter from "./components/Router/MainRouter";
+
+import UseReducer from "./components/UseReducer/UseReducer";
 
 function App() {
-  return <MainRouter />;
-}
+  return (
+    <div className="container">
+      <UseReducer />
+    </div>
+  );
+
 
 export default App;

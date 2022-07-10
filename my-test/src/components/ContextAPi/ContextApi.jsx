@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { data } from "../../Data";
+import { data } from "../../data";
 
 const PersonContext = React.createContext();
 //!note have a two component 1) provider 2) consumer
