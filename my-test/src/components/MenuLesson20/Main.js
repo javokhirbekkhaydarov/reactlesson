@@ -28,7 +28,7 @@ const Main = () => {
           </h2>
         </div>
 
-        <Categories categories={categories} filterItem={filterItems} />
+        <Categories categories={categories} filterItems={filterItems} />
         <Menu items={menuItems} />
       </section>
     </main>
