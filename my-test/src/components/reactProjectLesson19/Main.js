@@ -34,8 +34,7 @@ const Main = () => {
 
   return (
     <main>
-    
-      <Tours  tours={tours}/>
+      <Tours tours={tours} />
     </main>
   );
 };
