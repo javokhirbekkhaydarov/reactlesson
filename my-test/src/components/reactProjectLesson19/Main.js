@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import Loading from "./Loading";
+import Tours from "./Tours";
 import "./Main.css";
 
 const url = "https://course-api.com/react-tours-project";
@@ -21,7 +23,21 @@ const Main = () => {
   useEffect(() => {
     fetchTours();
   }, []);
-  return <div>Main</div>;
+
+  if (loading) {
+    return (
+      <main>
+        <Loading />
+      </main>
+    );
+  }
+
+  return (
+    <main>
+    
+      <Tours  tours={tours}/>
+    </main>
+  );
 };
 
 export default Main;
