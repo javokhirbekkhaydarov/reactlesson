@@ -1,6 +1,6 @@
 import "./App.css";
 
-import Main from "./components/MenuLesson20/Main";
+import Main from "./components/Lesson21Store/Main";
 function App() {
   return (
     <div className="container">
