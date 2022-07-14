@@ -64,7 +64,8 @@ function Main() {
   }, [list]);
   return (
     <section className="section-center">
-      <form className="grocery-form">
+      <form className="grocery-form" onSubmit={handleSubmit}>
+        {alert.show && <Alert {...alert} removeAlert={showAlert} list={list} />}
         <h3>grocery bud</h3>
         <div className="form-control">
           <input
@@ -75,10 +76,16 @@ function Main() {
             onChange={(e) => setName(e.target.value)}
           />
           <button className="submit-btn" type="submit">
-            submit
+            {isEditing ? "edit" : "submit"}
           </button>
         </div>
       </form>
+      {list.length > 0 && (
+        <div className="grocery-container">
+          <List item={list} removeItem={removeItem} editItem={editItem} />
+          <button className="clear-btn" onClick={clearList}>clear items</button>
+        </div>
+      )}
     </section>
   );
 }
