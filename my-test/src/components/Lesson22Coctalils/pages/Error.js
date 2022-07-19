@@ -1,9 +1,17 @@
-import React from 'react'
-
+import React from "react";
+import { Link } from "react-router-dom";
+import "../../../index.css"
 const Error = () => {
   return (
-    <div>Error</div>
-  )
-}
+    <section className="section error-page">
+      <div className="error-container">
+        <h1>404 page note found</h1>
+        <Link to={"/"} className="btn btn-primary">
+          back to home
+        </Link>
+      </div>
+    </section>
+  );
+};
 
-export default Error
+export default Error;
