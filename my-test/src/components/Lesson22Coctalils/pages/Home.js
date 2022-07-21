@@ -1,9 +1,11 @@
-import React from 'react'
-
+import React from "react";
+import CocktailList from "../CocktailList";
 const Home = () => {
   return (
-    <div>Home</div>
-  )
-}
+    <main>
+      <CocktailList />
+    </main>
+  );
+};
 
-export default Home
+export default Home;
