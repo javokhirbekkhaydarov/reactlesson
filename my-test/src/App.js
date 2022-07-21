@@ -5,6 +5,7 @@ import Navbar from "./components/Lesson22Coctalils/Navbar";
 import Home from "./components/Lesson22Coctalils/pages/Home";
 import About from "./components/Lesson22Coctalils/pages/About";
 import Error from "./components/Lesson22Coctalils/pages/Error";
+import SingleCocktail from "./components/Lesson22Coctalils/pages/SingleCocktail";
 
 function App() {
   return (
