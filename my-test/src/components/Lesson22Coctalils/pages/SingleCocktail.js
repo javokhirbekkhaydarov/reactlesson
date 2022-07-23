@@ -58,7 +58,34 @@ const SingleCocktail = () => {
     getCocktail();
   }, [id]);
 
-  return <div>SingleCocktail</div>;
+  if (loading) {
+    return <Loading />;
+  }
+  if (!cocktail) {
+    return <h2 className="section-title">no cocktails</h2>;
+  } else {
+    const {
+      id,
+      name,
+      image,
+      category,
+      info,
+      glass,
+      instructions,
+      ingredients,
+    } = cocktail;
+    return (
+      <section className="section cocktail-section">
+        <Link to="/" className="btn btn-primary">
+          Back to Home
+        </Link>
+        <h2 className="section-title">{name}</h2>
+        <div className="drink">
+          <img src={image} alt={name} />
+        </div>
+      </section>
+    );
+  }
 };
 
 export default SingleCocktail;
