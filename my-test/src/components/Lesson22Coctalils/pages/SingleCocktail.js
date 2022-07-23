@@ -15,7 +15,7 @@ const SingleCocktail = () => {
           `https://www.thecocktaildb.com/api/json/v1/1/search.php?i=${id}`
         );
         const data = await response.json();
-        if (data.drink) {
+        if (data.drinks) {
           const {
             strDrink: name,
             strDrinkThumb: image,
@@ -29,6 +29,7 @@ const SingleCocktail = () => {
             strIngredient4,
             strIngredient5,
           } = data.drinks[0];
+
           const ingredients = [
             strIngredient1,
             strIngredient2,
@@ -36,6 +37,7 @@ const SingleCocktail = () => {
             strIngredient4,
             strIngredient5,
           ];
+          
           const newCocktail = {
             id,
             name,
@@ -82,6 +84,29 @@ const SingleCocktail = () => {
         <h2 className="section-title">{name}</h2>
         <div className="drink">
           <img src={image} alt={name} />
+          <div className="drink-info">
+            <p>
+              <span className="drink-date">name: {name}</span>
+            </p>
+            <p>
+              <span className="drink-date">category: {category}</span>
+            </p>
+            <p>
+              <span className="drink-date">info: {info}</span>
+            </p>
+            <p>
+              <span className="drink-date">glass: {glass}</span>
+            </p>
+            <p>
+              <span className="drink-date">instructions: {instructions}</span>
+            </p>
+            <p>
+              <span className="drink-date">ingredients: {ingredients}</span>
+            </p>
+            {ingredients.map((item, index) => {
+              return item ? <span key={id}>{item}</span> : null;
+            })}
+          </div>
         </div>
       </section>
     );
