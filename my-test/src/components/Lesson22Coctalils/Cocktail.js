@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
 const Cocktail = ({ image, name, id, info, glass }) => {
   return (
-    <article className="coctail">
-      <div className="image-container">
+    <article className="cocktail">
+      <div className="imga-container">
         <img src={image} alt={name} />
       </div>
       <div className="cocktail-footer">
@@ -11,7 +12,7 @@ const Cocktail = ({ image, name, id, info, glass }) => {
         <h4>{glass}</h4>
         <p>{info}</p>
         <Link to={`/cocktail/${id}`} className="btn btn-primary btn-details">
-          detail
+          details
         </Link>
       </div>
     </article>
