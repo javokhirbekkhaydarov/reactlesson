@@ -1,21 +1,22 @@
-import React from "react";
-import Loading from "../Loading";
-import { useParams, Link } from "react-router-dom";
+import React from 'react';
+import Loading from '../Loading';
+import { useParams, Link } from 'react-router-dom';
 
-const SingleCocktail = () => {
-  const { id } = useParams();
-  const { loading, setLoading } = React.useState(false);
+const SingleCocktail = () => { 
+  const {id} = useParams();
+  const [loading, setLoading] = React.useState(false);
   const [cocktail, setCocktail] = React.useState(null);
-
+  
   React.useEffect(() => {
-    setLoading(true);
-    async function getCocktail() {
+    setLoading(true)
+    async function getCocktail() { 
       try {
-        const response = await fetch(
-          `https://www.thecocktaildb.com/api/json/v1/1/search.php?i=${id}`
-        );
-        const data = await response.json();
-        if (data.drinks) {
+        const response = await fetch (
+          `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`
+        ) 
+        const data = await response.json(); 
+        console.log(data);
+        if( data.drinks) {
           const {
             strDrink: name,
             strDrinkThumb: image,
@@ -28,89 +29,79 @@ const SingleCocktail = () => {
             strIngredient3,
             strIngredient4,
             strIngredient5,
-          } = data.drinks[0];
-
+          } = data.drinks[0]
           const ingredients = [
             strIngredient1,
             strIngredient2,
             strIngredient3,
             strIngredient4,
             strIngredient5,
-          ];
-          
+          ]
           const newCocktail = {
-            id,
-            name,
-            image,
-            category,
-            info,
-            glass,
-            instructions,
-            ingredients,
-          };
+            name, image, info, category, glass, instructions, ingredients
+          }
           setCocktail(newCocktail);
-        } else {
-          setCocktail(null);
+        }  else {
+          setCocktail(null)
         }
       } catch (error) {
         console.log(error);
-      }
-      setLoading(false);
-    }
-    getCocktail();
+      } 
+      setLoading(false)
+    } 
+    getCocktail()
   }, [id]);
-
-  if (loading) {
-    return <Loading />;
-  }
-  if (!cocktail) {
-    return <h2 className="section-title">no cocktails</h2>;
+  
+  if(loading) {
+    return <Loading/>
+  } 
+  
+  if(!cocktail) {
+    return <h2 className='section-title'>koktaillar yo'q</h2>
   } else {
     const {
-      id,
-      name,
+      name, 
       image,
       category,
       info,
       glass,
       instructions,
       ingredients,
-    } = cocktail;
+    } = cocktail
     return (
-      <section className="section cocktail-section">
-        <Link to="/" className="btn btn-primary">
-          Back to Home
-        </Link>
-        <h2 className="section-title">{name}</h2>
-        <div className="drink">
-          <img src={image} alt={name} />
-          <div className="drink-info">
+      <section className='section cocktail-section'>
+        <Link to='/' className='btn btn-primary'>back home</Link>
+        <h2 className='section-title'>{name}</h2> 
+        <div className='drink'>
+          <img src={image} alt={name}/>
+          
+          <div className='drink-info'>
             <p>
-              <span className="drink-date">name: {name}</span>
+              <span className='drink-data'>name:</span> {name}
             </p>
             <p>
-              <span className="drink-date">category: {category}</span>
+              <span className='drink-data'>category:</span> {category}
             </p>
             <p>
-              <span className="drink-date">info: {info}</span>
+              <span className='drink-data'>info:</span> {info}
             </p>
             <p>
-              <span className="drink-date">glass: {glass}</span>
+              <span className='drink-data'>glass:</span> {glass}
             </p>
             <p>
-              <span className="drink-date">instructions: {instructions}</span>
+              <span className='drink-data'>instructions:</span> {instructions}
             </p>
             <p>
-              <span className="drink-date">ingredients: {ingredients}</span>
-            </p>
-            {ingredients.map((item, index) => {
-              return item ? <span key={id}>{item}</span> : null;
-            })}
+              <span className='drink-data'>ingredients:</span> 
+              {ingredients.map((item, index) => {
+                return item ? <span key={item}>{item}</span> : null
+              })}
+            </p>      
           </div>
         </div>
       </section>
-    );
+    )
   }
-};
+}
 
-export default SingleCocktail;
+export default SingleCocktail
