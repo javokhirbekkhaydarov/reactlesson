@@ -1,9 +1,12 @@
-import React from 'react'
+const paginate = (followers) => {
+  const itemsPerPage = 10;
+  const numberOfPages = Math.ceil(followers.length / itemsPerPage);
 
-const Util = () => {
-  return (
-    <div>Util</div>
-  )
-}
+  const newFollowers = Array.from({ length: numberOfPages }, (_, index) => {
+    const start = index + itemsPerPage;
+    return followers.slice(start, start + itemsPerPage);
+  });
+  return newFollowers;
+};
 
-export default Util
+export default paginate;
