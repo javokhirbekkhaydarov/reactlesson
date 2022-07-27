@@ -4,11 +4,9 @@ import "./App.css";
 import Main from "./components/Lesson25Pagination/Main";
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Main />} />
-      </Routes>
-    </Router>
+    <div>
+      <Main />
+    </div>
   );
 }
 
