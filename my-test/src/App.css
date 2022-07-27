@@ -1,9 +1,9 @@
 .container {
-  max-width: 100%;;
+  max-width: 100%;
   padding: 15px;
   margin: 15px;
 }
 
-.headline {
+div {
   text-align: center;
 }
