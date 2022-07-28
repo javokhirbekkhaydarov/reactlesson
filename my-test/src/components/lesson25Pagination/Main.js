@@ -3,39 +3,38 @@ import { UseFetch } from "./UseFetch";
 import "./Main.css";
 import Followers from "./Followers";
 const Main = () => {
-    
-    const {loading, data } = UseFetch(); 
-    const [page, setPage] = useState(0);
-    const [followers, setFollowers] = useState([]);
-    
-    useEffect(() => {
-        if(loading) return 
-        setFollowers(data[page]);
-    }, [loading, page]);
-    
-    const nextPage = () => {
-        setPage((oldPage) => {
-            let nextPage = oldPage + 1
-            if (nextPage > data.length - 1) {
-                nextPage = 0;
-            }
-            return nextPage
-        })
-    } 
-    
-    const prevPage = () => {
-        setPage((oldPage) => {
-            let prevPage = oldPage - 1
-            if (prevPage < 0) {
-                prevPage = data.length - 1
-            }
-            return prevPage
-        })
-    }
-    
-    const handlePage = (index) => {
-        setPage(index);
-    }
+  const { loading, data } = UseFetch();
+  const [page, setPage] = useState(0);
+  const [followers, setFollowers] = useState([]);
+
+  useEffect(() => {
+    if (loading) return;
+    setFollowers(data[page]);
+  }, [loading, page]);
+
+  const nextPage = () => {
+    setPage((oldPage) => {
+      let nextPage = oldPage + 1;
+      if (nextPage > data.length - 1) {
+        nextPage = 0;
+      }
+      return nextPage;
+    });
+  };
+
+  const prevPage = () => {
+    setPage((oldPage) => {
+      let prevPage = oldPage - 1;
+      if (prevPage < 0) {
+        prevPage = data.length - 1;
+      }
+      return prevPage;
+    });
+  };
+
+  const handlePage = (index) => {
+    setPage(index);
+  };
   return (
     <main>
       <div className="section-title">
@@ -44,8 +43,8 @@ const Main = () => {
       </div>
       <section className="followers">
         <div className="container">
-          {data.map((follower) => {
-            return <Followers key={follower.id} {...followers} />;
+          {followers.map((follower) => {
+            return <Followers key={follower.id} {...follower} />;
           })}
         </div>
         {!loading && (
@@ -55,7 +54,7 @@ const Main = () => {
             </button>
             {data.map((item, index) => {
               return (
-                <button
+                <button 
                   key={index}
                   className={`page-btn ${index === page ? "active-btn" : null}`}
                   onClick={() => handlePage(index)}
