@@ -28,15 +28,16 @@ const Main = () => {
     <main>
       <nav>
         <div className="nav-center">
-          <h1>OverReacted</h1>
+          <h1>Overreacted</h1>
           <button className="btn" onClick={toggleTheme}>
-            mode
+            {" "}
+            toggle{" "}
           </button>
         </div>
       </nav>
       <section className="articles">
         {data.map((item) => {
-          return <Article key={item.id} />;
+          return <Article key={item.id} {...item} />;
         })}
       </section>
     </main>
