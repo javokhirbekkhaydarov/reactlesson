@@ -5,13 +5,6 @@ const Counter = () => {
 
   const addNumberHandler = () => {
     setCounter(counter + 1);
-    if (counter === 5) {
-      alert("work");
-    } else if (counter === 8) {
-      alert("new work");
-    } else if (counter === 10) {
-      alert(" new new work");
-    }
   };
   return (
     <div>

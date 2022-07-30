@@ -5,7 +5,9 @@ import { useState } from "react";
 import "./Book.css";
 const Book = (props) => {
   const [title, setTitle] = useState(props.title);
-
+  const clickHunter = (props) => {
+    console.log("clicked");
+  };
   const titleCHangeHandler = () => {
     setTitle("focusing");
   };
