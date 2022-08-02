@@ -23,7 +23,7 @@ const Main = () => {
       <section className="menu section">
         <div className="title">
           <h2>
-            Our Menu
+            Welcome to Our Restourant 
             <div className="underline"></div>
           </h2>
         </div>
