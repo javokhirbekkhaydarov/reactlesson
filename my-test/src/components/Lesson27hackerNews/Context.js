@@ -7,7 +7,7 @@ import {
   HANDLE_PAGE,
   HANDLE_SEARCH,
 } from "./Actions";
-import reducer from "./reducer";
+import reducer from "./Reducer";
 
 const API_ENDPOINT = "https://hn.algolia.com/api/v1/search?";
 
@@ -50,7 +50,13 @@ const AppProvider = ({ children }) => {
   useEffect(() => {
     fetchStories(`${API_ENDPOINT}query=${state.query}&page=${state.page}`);
   }, [state.query, state.page]);
-  return <AppContext.Provider>{children}</AppContext.Provider>;
+  return (
+    <AppContext.Provider
+      value={{ ...state, removeStory, handleSearch, handlePage }}
+    >
+      {children}
+    </AppContext.Provider>
+  );
 };
 // make sure use
 export const useGlobalContext = () => {
