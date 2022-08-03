@@ -1,9 +1,17 @@
-import React from 'react'
+import React from "react";
+import Button from "./Button";
+import SearchForm from "./SearchForm";
+import Stories from "./Stories";
 
 const Main = () => {
   return (
-    <div>Main</div>
-  )
-}
+    <>
 
-export default Main
+      <SearchForm />
+       <Button />
+       <Stories /> 
+    </>
+  );
+};
+
+export default Main;
