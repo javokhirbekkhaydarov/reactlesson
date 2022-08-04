@@ -20,15 +20,11 @@ const Reducer = (state, action) => {
     case REMOVE_STORY:
       return {
         ...state,
-        hits: state.hits.filter(() => REMOVE_STORY.objectID !== action.payload),
+        hits: state.hits.filter((story) => story.objectID !== action.payload),
       };
     case HANDLE_SEARCH:
-      return {
-        ...state,
-        query: action.payload,
-        page: 0,
-      };
-    case HANDLE_PAGE: {
+      return { ...state, query: action.payload, page: 0 };
+    case HANDLE_PAGE:
       if (action.payload === "inc") {
         let nextPage = state.page + 1;
         if (nextPage > state.nbPages - 1) {
@@ -43,10 +39,8 @@ const Reducer = (state, action) => {
         }
         return { ...state, page: prevPage };
       }
-    }
     default:
-      throw new Error(`no matching "${action.type}" action type `);
-      break;
+      throw new Error(`no matchiong "${action.type}" action type`);
   }
 };
 
