@@ -27,6 +27,12 @@ const Stories = () => {
               >
                 read more
               </a>
+              <button
+                className="remove-btn"
+                onClick={() => removeStory(objectID)}
+              >
+                remove
+              </button>
             </div>
           </article>
         );
