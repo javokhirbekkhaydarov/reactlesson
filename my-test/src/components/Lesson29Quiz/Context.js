@@ -17,7 +17,7 @@ const AppProvider = ({ children }) => {
   const [waiting, setWaiting] = useState(true);
   const [loading, setLoading] = useState(false);
   const [questions, setQuestions] = useState([]);
-  const [index, setiIndex] = useState(0);
+  const [index, setIndex] = useState(0);
   const [correct, setCorrect] = useState(0);
   const [error, setError] = useState(false);
   const [quiz, setQuiz] = useState({
@@ -26,6 +26,58 @@ const AppProvider = ({ children }) => {
     difficulty: "easy",
   });
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const fetchQuestions = async (url) => {
+    setLoading (true)
+    setWaiting(false)
+    const response = await axios(url).catch((error) => console.log(error));
+    if(response) {
+        const data = response.data.results
+        if (data.length > 0) {
+            setQuestions(data)
+            setLoading(false)
+            setWaiting(false)
+            setError(false)
+        } else {
+            setWaiting(true)
+            setError(true)
+        }
+    } else {
+        setWaiting(true)
+    }
+}  
+
+  const nextQuestion = () => {
+    setIndex((oldIndex) => {
+      const index = oldIndex + 1
+      if(index > questions.length - 1) {
+        openModal()
+        return 0
+      } else {
+        return index
+      }
+    })
+  }
+
+
+  const checkAnswer = value => {
+    if(value) {
+      setCorrect((oldState) => oldState + 1)
+    }
+     nextQuestion()
+  }
+   const openModal = () => {
+    setIsModalOpen(true)
+  }
+
+  const  handleSubmit = e => {
+    e.preventDefault();
+
+
+    const {amount , category , difficulty } = quiz
+    const url = `${API_ENDPOINT}amount=${amount}&difficulty=${difficulty}&category${table[category]}&type=multiple`
+    fetchQuestions(url)
+
+  }
   return (
     <AppContext.Provider
       value={{
@@ -37,6 +89,9 @@ const AppProvider = ({ children }) => {
         error,
         isModalOpen,
         quiz,
+        nextQuestion,
+        checkAnswer,
+        handleSubmit
       }}
     >
       {children}
