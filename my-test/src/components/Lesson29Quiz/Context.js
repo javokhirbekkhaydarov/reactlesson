@@ -27,57 +27,54 @@ const AppProvider = ({ children }) => {
   });
   const [isModalOpen, setIsModalOpen] = useState(false);
   const fetchQuestions = async (url) => {
-    setLoading (true)
-    setWaiting(false)
+    setLoading(true);
+    setWaiting(false);
     const response = await axios(url).catch((error) => console.log(error));
-    if(response) {
-        const data = response.data.results
-        if (data.length > 0) {
-            setQuestions(data)
-            setLoading(false)
-            setWaiting(false)
-            setError(false)
-        } else {
-            setWaiting(true)
-            setError(true)
-        }
+    if (response) {
+      const data = response.data.results;
+      if (data.length > 0) {
+        setQuestions(data);
+        setLoading(false);
+        setWaiting(false);
+        setError(false);
+      } else {
+        setWaiting(true);
+        setError(true);
+      }
     } else {
-        setWaiting(true)
+      setWaiting(true);
     }
-}  
+  };
 
   const nextQuestion = () => {
     setIndex((oldIndex) => {
-      const index = oldIndex + 1
-      if(index > questions.length - 1) {
-        openModal()
-        return 0
+      const index = oldIndex + 1;
+      if (index > questions.length - 1) {
+        openModal();
+        return 0;
       } else {
-        return index
+        return index;
       }
-    })
-  }
+    });
+  };
 
-
-  const checkAnswer = value => {
-    if(value) {
-      setCorrect((oldState) => oldState + 1)
+  const checkAnswer = (value) => {
+    if (value) {
+      setCorrect((oldState) => oldState + 1);
     }
-     nextQuestion()
-  }
-   const openModal = () => {
-    setIsModalOpen(true)
-  }
+    nextQuestion();
+  };
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
 
-  const  handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-
-    const {amount , category , difficulty } = quiz
-    const url = `${API_ENDPOINT}amount=${amount}&difficulty=${difficulty}&category${table[category]}&type=multiple`
-    fetchQuestions(url)
-
-  }
+    const { amount, category, difficulty } = quiz;
+    const url = `${API_ENDPOINT}amount=${amount}&difficulty=${difficulty}&category${table[category]}&type=multiple`;
+    fetchQuestions(url);
+  };
   return (
     <AppContext.Provider
       value={{
@@ -91,7 +88,7 @@ const AppProvider = ({ children }) => {
         quiz,
         nextQuestion,
         checkAnswer,
-        handleSubmit
+        handleSubmit,
       }}
     >
       {children}
