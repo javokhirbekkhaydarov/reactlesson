@@ -64,8 +64,14 @@ const AppProvider = ({ children }) => {
     }
     nextQuestion();
   };
+  //!modal
   const openModal = () => {
     setIsModalOpen(true);
+  };
+  const closeModal = () => {
+    setWaiting(true);
+    setCorrect(0);
+    setIsModalOpen(false);
   };
 
   const handleSubmit = (e) => {
