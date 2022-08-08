@@ -25,7 +25,7 @@ const SetupForm = () => {
           <div className="form-control">
             <label htmlFor="difficulty">difficulty</label>
             <select
-              type="number"
+             
               name="difficulty"
               id="difficulty"
               value={quiz.difficulty}
@@ -52,10 +52,14 @@ const SetupForm = () => {
             </select>
           </div>
 
-          {error && <p className="error"> can not generate questions</p>}
-          <button type="submit" className="submit-btn">
-            start
-          </button>
+          {
+
+            error &&  (
+              <p className="error"> can not generate questions</p>
+            )
+
+          }
+          <button type="submit" className="submit-btn"onClick={handleSubmit}>start</button>
         </form>
       </section>
     </main>

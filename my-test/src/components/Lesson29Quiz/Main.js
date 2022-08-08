@@ -4,7 +4,8 @@ import SetupForm from "./SetupForm";
 import Modal from "./Modal";
 import Loading from "./Loading";
 import "./Main.css";
-const Main = () => {
+
+function App() {
   const {
     waiting,
     loading,
@@ -31,14 +32,12 @@ const Main = () => {
     answers.push(answers[tempIndex]);
     answers[tempIndex] = correct_answer;
   }
-
   return (
     <main>
       <Modal />
       <section className="quiz">
         <p className="correct-answers">
-          {" "}
-          correct answers: {correct} / {index}
+          correct answers : {correct}/{index}
         </p>
         <article className="container">
           <h2 dangerouslySetInnerHTML={{ __html: question }} />
@@ -61,6 +60,6 @@ const Main = () => {
       </section>
     </main>
   );
-};
+}
 
-export default Main;
+export default App;
