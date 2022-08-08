@@ -74,6 +74,12 @@ const AppProvider = ({ children }) => {
     setIsModalOpen(false);
   };
 
+  const handleChange = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    setQuiz({ ...quiz, [name]: value });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -94,7 +100,10 @@ const AppProvider = ({ children }) => {
         quiz,
         nextQuestion,
         checkAnswer,
+        closeModal,
+        handleChange,
         handleSubmit,
+        
       }}
     >
       {children}
