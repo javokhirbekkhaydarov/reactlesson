@@ -1,9 +1,16 @@
-import React from 'react'
-
+import React from "react";
+import { Info, Repos, User, Search, Navbar } from "../components";
+import loadingImage from "../images/preloader.gif";
 const Dashboard = () => {
   return (
-    <div>Dashboard</div>
-  )
-}
+    <main>
+      <Navbar></Navbar>
+      <Search />
+      <Info />
+      <User />
+      <Repos />
+    </main>
+  );
+};
 
-export default Dashboard
+export default Dashboard;
