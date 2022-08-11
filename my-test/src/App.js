@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import Main from "./components/Lesson29Quiz/Main";
+import Main from "./components/Lesson31GIthub/Main";
 function App() {
   return (
     <div>
