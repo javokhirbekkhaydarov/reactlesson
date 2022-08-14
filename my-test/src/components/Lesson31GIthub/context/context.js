@@ -10,7 +10,7 @@ const GithubProvider = ({ children }) => {
   return (
     <GithubContext.Provider value={isLoading}>
       {children}
-    </GithubContext.Provider>
+    </GithubContext.Provider>  
   );
 };
 export { GithubProvider, GithubContext };
