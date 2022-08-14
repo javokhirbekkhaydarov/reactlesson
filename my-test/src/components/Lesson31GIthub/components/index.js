@@ -1,6 +1,6 @@
 import Card from "./Card";
 import Followers from "./Followers";
-import Info from "./info";
+import Info from "./Info";
 import Navbar from "./Navbar";
 import Repos from "./Repos";
 import Search from "./Search";
