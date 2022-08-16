@@ -1,7 +1,9 @@
 import React, { useState, useEffect, Children } from "react";
 import axios from "axios";
 import mockUser from "./mockData/MockUser";
+
 import mockRepos from "./mockData/MockRepos";
+
 import mockFollowers from "./mockData/mockFollowers";
 
 const rootUrl = "https://api.github.com";
@@ -16,8 +18,10 @@ const GithubProvider = ({ children }) => {
 
   return (
     <GithubContext.Provider value={(githubUser, repos, followers, isLoading)}>
+
       {children}
     </GithubContext.Provider>
   );
 };
+
 export { GithubProvider, GithubContext };
