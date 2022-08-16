@@ -6,6 +6,7 @@ const table = {
   history: 23,
   politics: 24,
 };
+
 const API_ENDPOINT = "https://opentdb.com/api.php?";
 
 const url = "";
@@ -26,10 +27,11 @@ const AppProvider = ({ children }) => {
     difficulty: "easy",
   });
   const [isModalOpen, setIsModalOpen] = useState(false);
+
   const fetchQuestions = async (url) => {
     setLoading(true);
     setWaiting(false);
-    const response = await axios(url).catch((error) => console.log(error));
+    const response = await axios(url).catch((err) => console.log(err));
     if (response) {
       const data = response.data.results;
       if (data.length > 0) {
@@ -57,24 +59,34 @@ const AppProvider = ({ children }) => {
       }
     });
   };
-
   const checkAnswer = (value) => {
     if (value) {
       setCorrect((oldState) => oldState + 1);
     }
     nextQuestion();
   };
+
   const openModal = () => {
     setIsModalOpen(true);
   };
-
+  const closeModal = () => {
+    setWaiting(true);
+    setCorrect(0);
+    setIsModalOpen(false);
+  };
+  const handleChange = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    setQuiz({ ...quiz, [name]: value });
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
-
     const { amount, category, difficulty } = quiz;
-    const url = `${API_ENDPOINT}amount=${amount}&difficulty=${difficulty}&category${table[category]}&type=multiple`;
+
+    const url = `${API_ENDPOINT}amount=${amount}&difficulty=${difficulty}&category=${table[category]}&type=multiple`;
     fetchQuestions(url);
   };
+
   return (
     <AppContext.Provider
       value={{
@@ -85,9 +97,11 @@ const AppProvider = ({ children }) => {
         correct,
         error,
         isModalOpen,
-        quiz,
         nextQuestion,
         checkAnswer,
+        closeModal,
+        quiz,
+        handleChange,
         handleSubmit,
       }}
     >
