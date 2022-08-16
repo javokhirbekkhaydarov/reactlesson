@@ -1,16 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { AppProvider } from './components/Lesson27hackerNews/Context';
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { AppProvider } from "./components/Lesson29Quiz/Context";
+import { GithubProvider } from "./components/Lesson31GIthub/context/context";
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode> 
-    <AppProvider>
-        <App />      
-    </AppProvider>
+  <React.StrictMode>
+    <GithubProvider>
+      <AppProvider>
+        <App />
+      </AppProvider>
+    </GithubProvider>
   </React.StrictMode>
 );
 
