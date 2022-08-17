@@ -37,7 +37,7 @@ const Pie = ({ data }) => {
         showShadow: 0,
         showPlotBorder: 0,
         paletteColors:
-          "#2caeba, #5D62B5, #FFC533, #F2726F, #8d6e63, #1de9b6, #6E80CA",
+          "#EAD41C, #2F49D4, #D84924, #F2726F, #8d6e63, #1de9b6, #6E80CA",
         use3DLighting: 0,
         useDataPlotColorForLabels: 0,
         bgColor: "#FFFFFF",
