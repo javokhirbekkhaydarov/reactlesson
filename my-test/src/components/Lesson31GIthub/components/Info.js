@@ -52,6 +52,7 @@ const Info = () => {
 
 const Item = ({ icon, label, value, color }) => {
   return (
+    <Wrapper className="section-center">
     <article className="item">
       <span className={color}>{icon}</span>
       <div>
@@ -59,6 +60,8 @@ const Item = ({ icon, label, value, color }) => {
         <p>{label}</p>
       </div>
     </article>
+      </Wrapper>
+
   );
 };
 
