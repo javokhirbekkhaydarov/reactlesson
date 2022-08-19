@@ -41,7 +41,7 @@ const Info = () => {
 
   return (
     <section className="section">
-      <Wrapper className="section-center">
+      <Wrapper>
         {items.map((item) => {
           return <Item key={item.id} {...item}></Item>;
         })}
@@ -53,14 +53,15 @@ const Info = () => {
 const Item = ({ icon, label, value, color }) => {
   return (
     <Wrapper className="section-center">
-      <article className="item">
-        <span className={color}>{icon}</span>
-        <div>
-          <h3>{value}</h3>
-          <p>{label}</p>
-        </div>
-      </article>
-    </Wrapper>
+    <article className="item">
+      <span className={color}>{icon}</span>
+      <div>
+        <h3>{value}</h3>
+        <p>{label}</p>
+      </div>
+    </article>
+      </Wrapper>
+
   );
 };
 
@@ -114,6 +115,6 @@ const Wrapper = styled.section`
       color: #f0b429;
     }
   }
-`;
+`; 
 
 export default Info;
