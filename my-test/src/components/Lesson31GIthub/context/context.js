@@ -20,7 +20,7 @@ const GithubProvider = ({ children }) => {
 
   const searchGithubUser = async (user) => {
     toggleError();
-    setIsLoading(true);
+    setIsLoading(false);
     const response = await axios(`${rootUrl}/users/${user}`).catch((err) =>
       console.log(err)
     );
@@ -32,31 +32,61 @@ const GithubProvider = ({ children }) => {
       await Promise.allSettled([
         axios(`${rootUrl}/users/${login}/repos?/per_page=100`),
         axios(`${followers_url}?per_page=100`),
-      ]).then((results) => {
-        const [repos, followers] = results;
+      ])
+        .then((results) => {
+          const [repos, followers] = results;
 
-        const status = "fulfilled";
-        if (repos.status === status) {
-          setRepos(repos.value.data);
-        }
-        if(followers.status === status) {
-          setFollowers(followers.value.data)
+          const status = "fulfilled";
+          if (repos.status === status) {
+            setRepos(repos.value.data);
+          }
+          if (followers.status === status) {
+            setFollowers(followers.value.data);
+          }
+        })
+        .catch((err) => console.log(err));
+    } else {
+      toggleError(true, "user not found");
+      setIsLoading(true);
+    }
+    checkRequests();
+  };
+
+  //! checkRequests
+
+  const checkRequests = () => {
+    axios(`${rootUrl}/rate_limit`)
+      .then(({ data }) => {
+        let {
+          rate: { remaining },
+        } = data;
+        setRequests(remaining);
+        if (remaining === 0) {
+          toggleError(true, "sorry . the end limit ");
         }
       })
-      .catch(
-        (err) => console.log(err)
-      )
-    } else {
-      toggleError(true , 'user not found')
-    }
-    setIsLoading(false)
+      .catch((err) => console.log(err));
   };
 
   function toggleError(show = false, msg = "") {
     setError({ show, msg });
   }
+  useEffect(checkRequests, []);
+  useEffect(() => {
+    searchGithubUser("javohirbekkhaydarov");
+  }, []);
   return (
-    <GithubContext.Provider value={{ githubUser, repos, followers, isLoading }}>
+    <GithubContext.Provider
+      value={{
+        githubUser,
+        repos,
+        followers,
+        requests,
+        error,
+        searchGithubUser,
+        isLoading,
+      }}
+    >
       {children}
     </GithubContext.Provider>
   );
