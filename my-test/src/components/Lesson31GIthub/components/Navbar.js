@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 import React from "react";
 import styled from "styled-components";
 import { useAuth0 } from "@auth0/auth0-react";
+=======
+import React from 'react'
+
+>>>>>>> f9a71e9837a61e0fcc8080967b3d8e8747213ef7
 //? domen => dev--udxxk7p.us.auth0.com
 //? id    => 27Jn1hUbTjzzjYCA13FJEIXWqRPh8onF
 const Navbar = () => {
